@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inscription</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <div class="card" role="region" aria-labelledby="title">
+      <h1 id="title">Créer un compte</h1>
+      <p class="sub">Remplissez le formulaire ci-dessous pour vous inscrire.</p>
+
+      <div id="globalError" class="error" role="alert" aria-live="assertive"></div>
+
+      <form id="signupForm" action="#" method="post" novalidate>
+        <div>
+          <label for="login">Login</label>
+          <input id="login" name="login" type="text" autocomplete="username" required minlength="3" maxlength="32" />
+          <div class="help">3 à 32 caractères (lettres, chiffres, traits d'union/underscore).</div>
+          <div class="error" data-error-for="login"></div>
+        </div>
+
+        <div class="row">
+          <div>
+            <label for="password">Mot de passe</label>
+            <input id="password" name="password" type="password" autocomplete="new-password" required minlength="8" aria-describedby="pwdHelp" />
+            <div id="pwdHelp" class="help">Au moins 8 caractères, idéalement avec majuscules, chiffres et symboles.</div>
+            <div class="error" data-error-for="password"></div>
+          </div>
+          <div>
+            <label for="confirm">Confirmation du mot de passe</label>
+            <input id="confirm" name="confirm" type="password" autocomplete="new-password" required />
+            <div id="matchError" class="error">Les mots de passe ne correspondent pas.</div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <label for="nom">Nom</label>
+            <input id="nom" name="nom" type="text" autocomplete="family-name" required />
+            <div class="error" data-error-for="nom"></div>
+          </div>
+          <div>
+            <label for="prenom">Prénom</label>
+            <input id="prenom" name="prenom" type="text" autocomplete="given-name" required />
+            <div class="error" data-error-for="prenom"></div>
+          </div>
+        </div>
+
+        <div>
+          <label for="adresse">Adresse</label>
+          <input id="adresse" name="adresse" type="text" autocomplete="street-address" required />
+          <div class="error" data-error-for="adresse"></div>
+        </div>
+
+        <div class="row">
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required />
+            <div class="error" data-error-for="email"></div>
+          </div>
+          <div>
+            <label for="tel">Téléphone</label>
+            <input id="tel" name="tel" type="tel" autocomplete="tel" inputmode="tel" pattern="^[+0-9 ().-]{6,}$" placeholder="Ex. +33 6 12 34 56 78" required />
+            <div class="help">Format libre : chiffres, espaces, (), +, - et .</div>
+            <div class="error" data-error-for="tel"></div>
+          </div>
+        </div>
+
+        <div>
+          <label for="naissance">Date de naissance</label>
+          <input id="naissance" name="naissance" type="date" required />
+          <div class="error" data-error-for="naissance"></div>
+        </div>
+
+        <button id="submitBtn" type="submit">S'inscrire</button>
+      </form>
+
+      <section id="summary" hidden aria-live="polite">
+        <h2>Récapitulatif de l’inscription</h2>
+        <p class="sub">Merci ! Voici les informations que vous avez fournies.</p>
+        <dl class="recap"></dl>
+        <button id="editBtn" type="button">Modifier</button>
+      </section>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
