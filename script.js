@@ -114,8 +114,7 @@ form.addEventListener('submit', (e) => {
     if (firstInvalid) firstInvalid.focus();
     return;
   }
-
-  // ✅ Masquer formulaire, afficher récap
+  
   form.hidden = true;
   form.classList.add('is-hidden');
   summarySection.hidden = false;
